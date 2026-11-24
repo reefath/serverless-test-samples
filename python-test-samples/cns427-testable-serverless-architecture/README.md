@@ -327,7 +327,7 @@ This codebase was developed using the **AI-DLC methodology** - a structured appr
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.13+
+- Python 3.14+
 - Poetry
 - Node.js 18+ (for AWS CDK)
 - AWS CLI v2

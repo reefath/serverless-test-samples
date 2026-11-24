@@ -4,7 +4,6 @@ Property-Based Tests: Complex Circular Dependency Detection
 Generated from Requirement 3: Complex Circular Dependency Detection
 Tests cycles of any length (3+ tasks).
 """
-import pytest
 from hypothesis import given, assume
 from hypothesis import strategies as st
 from services.task_service.domain.business_rules import has_circular_dependency
@@ -79,7 +78,7 @@ class TestComplexCircularDependencyProperties:
         # Check if task_d→task_a would complete the cycle
         result = has_circular_dependency(task_d, task_a, graph)
         
-        assert result is True, f"Four-task cycle should be detected"
+        assert result is True, "Four-task cycle should be detected"
     
     @given(tasks=st.lists(task_ids, min_size=3, max_size=8, unique=True))
     def test_cycle_detection_uses_dfs(self, tasks):

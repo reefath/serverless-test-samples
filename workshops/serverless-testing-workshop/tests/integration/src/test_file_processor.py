@@ -128,7 +128,7 @@ class TestFileProcessingWorkflow(TestCase):
         # Seed the S3 Bucket with Test Data
         # Note the uniqueness of the test data and S3 key to prevent collisions with actual data:
         #    both the postfix and the exact test name are part of the filename.
-        test_data_csv = f'"Unicorn Name","Unicorn Location"\n"'
+        test_data_csv = '"Unicorn Name","Unicorn Location"\n"'
         test_data_csv += f'{self.test_unicorn}","{self.test_location}"\n'
 
         test_data_key = f"INTEGRATION_TEST/TEST{self.id_postfix}.test_file_processor_happy_path.csv"

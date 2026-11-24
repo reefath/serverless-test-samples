@@ -1,4 +1,4 @@
-[![python: 3.9](https://img.shields.io/badge/Python-3.9-green)](https://img.shields.io/badge/Python-3.9-green)
+[![python: 3.14](https://img.shields.io/badge/Python-3.14-green)](https://img.shields.io/badge/Python-3.14-green)
 
 # Python Test Samples
 

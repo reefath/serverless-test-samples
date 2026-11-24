@@ -13,5 +13,5 @@ sys.path.insert(
             os.path.dirname(__file__),
             '../src')))
 
-from customer_v1_0_0_with_validation import Customer as ConsumerCustomerModel
-from customer_v1_0_0 import Customer as CustomerModel
+from customer_v1_0_0_with_validation import Customer as ConsumerCustomerModel  # noqa: F401
+from customer_v1_0_0 import Customer as CustomerModel  # noqa: F401

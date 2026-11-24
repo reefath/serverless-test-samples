@@ -58,7 +58,7 @@ flowchart TD
 ## Prerequisites
 
 - SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-- Python 3.13 or later - [Install Python 3](https://www.python.org/downloads/)
+- Python 3.14 or later - [Install Python 3](https://www.python.org/downloads/)
 - AWS Durable Execution SDK for Python - Installed via requirements.txt
 
 ## Project Structure

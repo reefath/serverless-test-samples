@@ -78,7 +78,7 @@ class TestInfrastructureStack(Stack):
             self,
             'TestHarnessLambda',
             function_name=config.test_subscriber_function_name(),
-            runtime=lambda_.Runtime.PYTHON_3_13,
+            runtime=lambda_.Runtime.PYTHON_3_14,
             architecture=lambda_.Architecture.ARM_64,
             code=lambda_.Code.from_asset(
                 '.', exclude=['*.md', 'cdk.out', '*.sh', 'app.py', 'cdk.json', 'test_infrastructure_stack.py', '__pycache__']

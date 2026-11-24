@@ -8,10 +8,8 @@
 import sys
 from os import environ
 import json
-from datetime import datetime
 from unittest import TestCase
 from typing import Any, Dict
-from uuid import uuid4
 import yaml
 import boto3
 from boto3.dynamodb.conditions import Key
@@ -22,13 +20,11 @@ xray_recorder.begin_segment("Mock Segment")
 sys.path.insert(0,'./src/Checkout')
 print(sys.path)
 
-from schemas import OUTPUT_SCHEMA                     # pylint: disable=wrong-import-position
-
 # Import the handler under test
 import app
 
 # Mock the DynamoDB Service during the test
-@moto.mock_dynamodb
+@moto.mock_aws
 
 
 class TestSampleLambdaWithDynamoDB(TestCase):
@@ -55,7 +51,7 @@ class TestSampleLambdaWithDynamoDB(TestCase):
         # Create a mock table using the definition from the SAM YAML template
         # This simple technique works if there are no intrinsics (like !If or !Ref) in the
         # resource properties for KeySchema, AttributeDefinitions, & BillingMode.
-        sam_template_table_properties = self.read_sam_template()["Resources"]["UnicornInventoryTable"]["Properties"]
+        self.read_sam_template()["Resources"]["UnicornInventoryTable"]["Properties"]
 
         print(f"Creating mock DynamoDB Table: {self.test_ddb_table_name}")
 

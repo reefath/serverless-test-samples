@@ -7,7 +7,7 @@ setup(
     version='1.0.0',
     packages=find_packages(),
     install_requires=[
-        'aws-cdk-lib>=2.100.0',
+        'aws-cdk-lib>=2.253.0',
         'constructs>=10.0.0',
     ],
 )

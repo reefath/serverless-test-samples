@@ -2,10 +2,10 @@
 # SPDX-License-Identifier: MIT-0
 
 import boto3
-from moto import mock_s3
+from moto import mock_aws
 from src.sampleCodeLayer.python.layer import get_s3_bucket_list_as_string
 
-@mock_s3
+@mock_aws
 def test_get_s3_bucket_list_as_string() -> None:
 
     # set up test bucket
@@ -14,7 +14,7 @@ def test_get_s3_bucket_list_as_string() -> None:
     test_data = b'col_1,col_2\n1,2\n3,4\n'
     for test_bucket_name in test_bucket_names:
         s3_client.create_bucket(Bucket=test_bucket_name)    
-        s3_client.put_object(Body=test_data, Bucket=test_bucket_name, Key=f'example/s3/path/key/test_data.csv')
+        s3_client.put_object(Body=test_data, Bucket=test_bucket_name, Key='example/s3/path/key/test_data.csv')
 
     # call lambda function handler with synthetic event 
     response_data = get_s3_bucket_list_as_string()

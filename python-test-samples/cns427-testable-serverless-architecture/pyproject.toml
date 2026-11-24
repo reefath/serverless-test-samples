@@ -12,7 +12,7 @@ classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
-    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
 readme = "README.md"
 keywords = ["serverless", "testing", "aws", "lambda"]
@@ -23,20 +23,20 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.13.0"
-pydantic = { version = "^2.0.3" }
-aws-lambda-powertools = { extras = ["tracer"], version = "^2.20.0" }
+python = "^3.14.0"
+pydantic = { version = "^2.12.0" }
+aws-lambda-powertools = { extras = ["tracer"], version = "^3.23.0" }
 mypy-boto3-dynamodb = "*"
 mypy-boto3-events = "*"
 boto3 = "^1.26.125"
-aws-lambda-env-modeler = { version = "^1.0.5" }
+aws-lambda-env-modeler = { version = "^2.1.0" }
 
 [tool.poetry.group.dev.dependencies]
 # CDK
 cns427-infrastructure = { path = "infrastructure", develop = true }
-aws-cdk-lib = ">=2.100.0"
+aws-cdk-lib = ">=2.253.0"
 constructs = ">=10.0.0"
-cdk-nag = ">2.0.0"
+cdk-nag = ">2.0.0,<3.0.0"
 # Testing
 pytest = "*"
 pytest-mock = "*"
@@ -99,7 +99,7 @@ exclude = [
 ]
 line-length = 150
 indent-width = 4
-target-version = "py313"
+target-version = "py314"
 
 [tool.ruff.lint]
 select = [

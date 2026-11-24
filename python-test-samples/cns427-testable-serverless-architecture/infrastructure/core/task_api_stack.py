@@ -155,13 +155,13 @@ class TaskApiStack(Stack):
             self,
             'TaskHandler',
             function_name=config.task_handler_function_name(),
-            runtime=lambda_.Runtime.PYTHON_3_13,
+            runtime=lambda_.Runtime.PYTHON_3_14,
             architecture=lambda_.Architecture.ARM_64,
             handler='services.task_service.handler.lambda_handler',
             code=lambda_.Code.from_asset(
                 '.',
                 bundling=BundlingOptions(
-                    image=lambda_.Runtime.PYTHON_3_13.bundling_image,
+                    image=lambda_.Runtime.PYTHON_3_14.bundling_image,
                     platform='linux/arm64',
                     command=[
                         'bash',
@@ -201,13 +201,13 @@ class TaskApiStack(Stack):
             self,
             'NotificationHandler',
             function_name=config.notification_handler_function_name(),
-            runtime=lambda_.Runtime.PYTHON_3_13,
+            runtime=lambda_.Runtime.PYTHON_3_14,
             architecture=lambda_.Architecture.ARM_64,
             handler='services.notification_service.handler.lambda_handler',
             code=lambda_.Code.from_asset(
                 '.',
                 bundling=BundlingOptions(
-                    image=lambda_.Runtime.PYTHON_3_13.bundling_image,
+                    image=lambda_.Runtime.PYTHON_3_14.bundling_image,
                     platform='linux/arm64',
                     command=[
                         'bash',

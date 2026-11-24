@@ -1,4 +1,4 @@
-[![python: 3.11](https://img.shields.io/badge/Python-3.11-green)](https://img.shields.io/badge/Python-3.11-green)
+[![python: 3.14](https://img.shields.io/badge/Python-3.14-green)](https://img.shields.io/badge/Python-3.14-green)
 [![AWS: DynamoDB](https://img.shields.io/badge/AWS-DynamoDB-blueviolet)](https://img.shields.io/badge/AWS-DynamoDB-blueviolet)
 [![AWS: S3](https://img.shields.io/badge/AWS-S3-green)](https://img.shields.io/badge/AWS-AWS-S3-green)
 [![AWS: Step Functions](https://img.shields.io/badge/AWS%20Step%20Functions-orange)](https://img.shields.io/badge/AWS%20Step%20Functions-orange)

@@ -1,7 +1,6 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: MIT-0
 
-import boto3
 from aws_xray_sdk.core import patch_all
 
 from aws_lambda_powertools.utilities.data_classes import APIGatewayProxyEvent

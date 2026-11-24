@@ -12,7 +12,7 @@ from src.sampleLambda import app
 
 @pytest.fixture()
 def apigw_event() ->  APIGatewayProxyEvent:
-    with open(f"events/unit-test-event.json") as f:
+    with open("events/unit-test-event.json") as f:
         return APIGatewayProxyEvent(json.load(f))
 
 def test_lambda_handler(apigw_event: dict, mocker) -> None:

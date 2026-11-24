@@ -54,9 +54,6 @@ def lambda_handler(event: APIGatewayProxyEvent, context: LambdaContext) -> Dict[
     Lambda Entry Point
     """
     # [5] Use the Global variables to optimize AWS resource connections
-    global _LAMBDA_DYNAMODB_RESOURCE
-    global _LAMBDA_S3_RESOURCE
-
     dynamodb_resource_class = LambdaDynamoDBClass(_LAMBDA_DYNAMODB_RESOURCE)
     s3_resource_class = LambdaS3Class(_LAMBDA_S3_RESOURCE)
 
@@ -80,25 +77,28 @@ def create_letter_in_s3( dynamo_db: LambdaDynamoDBClass,
     status_code = 200
     body = "OK"
     
-    try:         
-        # [7] Use the passed environment class for AWS resource access - DynamoDB
-        customer_name = dynamo_db.table.get_item(Key={"PK": f"C#{cust_id}"})["Item"]["data"]
-        document_text = dynamo_db.table.get_item(Key={"PK": f"D#{doc_type}"})["Item"]["data"]
+    try:
+        try:         
+            # [7] Use the passed environment class for AWS resource access - DynamoDB
+            customer_name = dynamo_db.table.get_item(Key={"PK": f"C#{cust_id}"})["Item"]["data"]
+            document_text = dynamo_db.table.get_item(Key={"PK": f"D#{doc_type}"})["Item"]["data"]
 
-        # [8] Use the passed environment class for AWS resource access - S3
-        s3_file_key = f"{cust_id}/{doc_type}.txt"
-        s3.bucket.put_object(Key=s3_file_key, 
-                        Body=f"Dear {customer_name};\n{document_text}".encode('utf-8'),
-                        ServerSideEncryption='AES256')
+            # [8] Use the passed environment class for AWS resource access - S3
+            s3_file_key = f"{cust_id}/{doc_type}.txt"
+            s3.bucket.put_object(Key=s3_file_key, 
+                            Body=f"Dear {customer_name};\n{document_text}".encode('utf-8'),
+                            ServerSideEncryption='AES256')
 
-        body = f"{body} {s3_file_key}"
-    except KeyError as index_error:
-        body = "Not Found: " + str(index_error)
-        status_code = 404
-    except Exception as other_error:               
-        body = "ERROR: " + str(other_error)
-        status_code = 500
-    finally:
-        return {"statusCode": status_code, "body" : body }
+            body = f"{body} {s3_file_key}"
+        except KeyError as index_error:
+            body = "Not Found: " + str(index_error)
+            status_code = 404
+        except Exception as other_error:               
+            body = "ERROR: " + str(other_error)
+            status_code = 500
+    except BaseException:  # pylint: disable=broad-exception-caught
+        # Keep the previous behaviour of returning from a finally block: any exception is discarded
+        pass
+    return {"statusCode": status_code, "body" : body }
 
 # End of lambda handler code

@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT-0
 import os
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from decimal import Decimal
 import boto3
 from aws_durable_execution_sdk_python import (
@@ -56,9 +56,9 @@ def persist_order_to_dynamodb(step_context, order_data):
             'orderId': order_id,
             'status': order_data['status'],
             'steps': json.dumps(order_data['steps']),  # Store steps as JSON string
-            'completedAt': order_data.get('completedAt', datetime.utcnow().isoformat()),
-            'createdAt': datetime.utcnow().isoformat(),
-            'ttl': int(datetime.utcnow().timestamp()) + (30 * 24 * 60 * 60)  # 30 days TTL
+            'completedAt': order_data.get('completedAt', datetime.now(timezone.utc).replace(tzinfo=None).isoformat()),
+            'createdAt': datetime.now(timezone.utc).replace(tzinfo=None).isoformat(),
+            'ttl': int(datetime.now(timezone.utc).replace(tzinfo=None).timestamp()) + (30 * 24 * 60 * 60)  # 30 days TTL
         }
         
         # Add amount if present (convert to Decimal)
@@ -68,7 +68,7 @@ def persist_order_to_dynamodb(step_context, order_data):
                 break
         
         # Put item in DynamoDB
-        response = table.put_item(Item=item)
+        table.put_item(Item=item)
         
         step_context.logger.info(f"Successfully persisted order {order_id} to DynamoDB")
         
@@ -114,7 +114,7 @@ def lambda_handler(event, context: DurableContext):
         "orderId": order_id,
         "status": "completed",
         "steps": [validation_result, payment_result, confirmation_result],
-        "completedAt": datetime.utcnow().isoformat()
+        "completedAt": datetime.now(timezone.utc).replace(tzinfo=None).isoformat()
     }
     
     # Step 4: Persist order to DynamoDB

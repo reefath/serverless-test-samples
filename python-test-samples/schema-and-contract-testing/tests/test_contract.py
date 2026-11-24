@@ -26,7 +26,7 @@ def test_street_name_for_address_not_compatible_with_business_logic():
     event generated with schema 1.4.0 does not satisfy this, so test fails
     """
     with pytest.raises(Exception) as e_info:
-        customer = instantiate_customer("1.4.0")
+        instantiate_customer("1.4.0")
     assert e_info.type == ValidationError
     assert "Address must have four fields separated by ','" in str(
         e_info.value)
