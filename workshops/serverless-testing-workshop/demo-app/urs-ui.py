@@ -195,7 +195,7 @@ with reserve_tab:
                                          options=st.session_state['reservation_unicorns'],
                                          key="reservation_unicorn_name")
         reserve_for = st.text_input("Reserve Unicorn for:")
-        if st.button(f"Reserve Unicorn"):
+        if st.button("Reserve Unicorn"):
             unicorn_to_reserve = st.session_state['reservation_unicorn_name']
             with st.spinner("Reserving Unicorn..."):
                 reserve_status = reserve_unicorn(st.session_state['api_endpoint_url'], 

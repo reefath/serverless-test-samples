@@ -2,7 +2,6 @@
 # SPDX-License-Identifier: MIT-0
 
 import os
-import json
 from unittest import TestCase
 
 import boto3

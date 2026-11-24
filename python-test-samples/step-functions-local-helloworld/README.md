@@ -1,4 +1,4 @@
-[![python: 3.10](https://img.shields.io/badge/Python-3.10-green)](https://img.shields.io/badge/Python-3.10-green)
+[![python: 3.14](https://img.shields.io/badge/Python-3.14-green)](https://img.shields.io/badge/Python-3.14-green)
 [![AWS: Step Functions](https://img.shields.io/badge/AWS-Step%20Functions-orange)](https://img.shields.io/badge/AWS-Step%20Functions-orange)
 [![Language: ASL](https://img.shields.io/badge/Language-ASL-blue)](https://img.shields.io/badge/Language-ASL-blue)
 [![test: pytest](https://img.shields.io/badge/Test-Pytest-red)](https://img.shields.io/badge/Test-Pytest-red)
@@ -64,7 +64,7 @@ Components:
 ## Prerequisites
 - Docker
 - AWS cli (debugging)
-- Python 3.10 or newer
+- Python 3.14 or newer
 - Basic understanding of Step Functions
 - Basic understanding of Amazon States Language (ASL)
 

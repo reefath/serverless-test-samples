@@ -1,4 +1,4 @@
-[![python: 3.10](https://img.shields.io/badge/Python-3.10-green)](https://img.shields.io/badge/Python-3.10-green)
+[![python: 3.14](https://img.shields.io/badge/Python-3.14-green)](https://img.shields.io/badge/Python-3.14-green)
 [![AWS: Step Functions](https://img.shields.io/badge/AWS-Step%20Functions-orange)](https://img.shields.io/badge/AWS-Step%20Functions-orange)
 [![Language: ASL](https://img.shields.io/badge/Language-ASL-blue)](https://img.shields.io/badge/Language-ASL-blue)
 [![AWS: Lambda](https://img.shields.io/badge/AWS-Lambda-yellow)](https://img.shields.io/badge/AWS-Lambda-yellow)
@@ -67,7 +67,7 @@ Components:
 
 ## Prerequisites
 - Docker
-- Python 3.10 or newer (running pytest)
+- Python 3.14 or newer (running pytest)
 - AWS SAM CLI (running SAM Lambda emulator)
 - AWS CLI v2 (for debugging)
 - Basic understanding of Step Functions

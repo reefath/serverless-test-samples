@@ -2,10 +2,7 @@ import os
 import aiohttp
 import asyncio
 import json
-import requests
-import unittest
 import boto3
-from unittest.mock import patch
 from MyCustomException import MyCustomException
 
 def lambda_handler(event, context):
@@ -41,12 +38,12 @@ def lambda_handler(event, context):
         }
 
 async def make_async_api_call(event):
-        api_url = os.environ['API_URL']
-        payload = event
+    api_url = os.environ['API_URL']
+    payload = event
 
-async with aiohttp.ClientSession() as session:
-    async with session.post(api_url, json=payload) as response:
-        api_data = await response.json()
+    async with aiohttp.ClientSession() as session:
+        async with session.post(api_url, json=payload) as response:
+            api_data = await response.json()
 
     return api_data.get('uuid', None)
 
@@ -67,7 +64,3 @@ def send_to_another_sqs_queue(message_body):
     )
 
     print(f'Message sent to another SQS queue. Response: {response}')
-
-# Run the event loop
-if __name__ == "__main__":
-    asyncio.run(main())

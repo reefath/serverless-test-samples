@@ -2,7 +2,6 @@
 # SPDX-License-Identifier: MIT-0
 import boto3
 import json
-import os
 import time
 from decimal import Decimal
 from aws_durable_execution_sdk_python_testing import DurableFunctionCloudTestRunner

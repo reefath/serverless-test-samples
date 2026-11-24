@@ -20,12 +20,9 @@ Globals: # https://docs.aws.amazon.com/serverless-application-model/latest/devel
     Function:
         Timeout: 15
         MemorySize: 256
-        Runtime: python3.9
+        Runtime: python3.14
         Tracing: Active # https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html
-        # Embed Lambda Powertools as a shared Layer
-        # See: https://awslabs.github.io/aws-lambda-powertools-python/latest/#lambda-layer
-        Layers: # 
-            - !Sub arn:aws:lambda:${AWS::Region}:017000801446:layer:AWSLambdaPowertoolsPython:9
+        # Lambda Powertools v3 is packaged from src/requirements.txt (the Powertools v1 layer does not support python3.14)
         Environment:
             Variables:
                 DESTINATION_BUCKET: 

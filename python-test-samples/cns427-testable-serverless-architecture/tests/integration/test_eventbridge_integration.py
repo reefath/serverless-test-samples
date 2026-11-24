@@ -18,7 +18,6 @@ import pytest
 from infrastructure.config import InfrastructureConfig
 from services.task_service.domain.task_service import TaskService
 from services.task_service.models.task import Task, TaskPriority, TaskStatus
-from shared.integration.dynamodb_adapter import DynamoDBTaskRepository
 from shared.integration.eventbridge_adapter import EventBridgePublisher
 from tests.integration.fakes.eventbridge_fake import EventBridgeFake
 from tests.unit.test_helpers import create_api_gateway_event, create_test_context

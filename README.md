@@ -3,7 +3,7 @@
 [![test: integration](https://img.shields.io/badge/Test-Integration-yellow)](https://img.shields.io/badge/Test-Integration-yellow)
 [![.NET: 6](https://badgen.net/badge/Built%20With/.NET/blue9)](https://badgen.net/badge/Built%20With/.NET/blue9)
 [![Java: 11](https://badgen.net/badge/Built%20With/Java/blue9)](https://badgen.net/badge/Built%20With/Java/blue9)
-[![python: 3.9](https://badgen.net/badge/Built%20With/Python/blue9)](https://badgen.net/badge/Built%20With/Python/blue9)
+[![python: 3.14](https://badgen.net/badge/Built%20With/Python/blue9)](https://badgen.net/badge/Built%20With/Python/blue9)
 [![typescript: 4.5.5](https://badgen.net/badge/Built%20With/TypeScript/blue9)](https://badgen.net/badge/Built%20With/TypeScript/blue9)
 
 

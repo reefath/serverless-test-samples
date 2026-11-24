@@ -108,7 +108,7 @@ def test_results_table() -> str:
             table_name = async_test_results_output[0]["OutputValue"]
         except IndexError as e:
             raise Exception(
-            f"Cannot find AsyncTransformTestResultsTable in stack. Were test resources deployed?"
+            "Cannot find AsyncTransformTestResultsTable in stack. Were test resources deployed?"
         ) from e
 
         yield table_name # teardown code for fixtures is run after the yield statement
@@ -125,7 +125,7 @@ def test_results_table() -> str:
     try:
         # if this attribute is not present, the delete_item command did not find the row to delete 
         response['Attributes']['message']
-    except KeyError as e:
+    except KeyError:
         raise Exception(
             f"Cannot delete {file_name.value} from {table_name}. Response: " + str(response)
         )

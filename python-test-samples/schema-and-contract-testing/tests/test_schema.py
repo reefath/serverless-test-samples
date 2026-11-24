@@ -39,7 +39,7 @@ def test_adding_required_element_backward_compatible():
 def test_removing_required_element_not_backward_compatible():
     """missing mandatory field will raise a validation error"""
     with pytest.raises(Exception) as e_info:
-        customer = instantiate_customer("1.3.0")
+        instantiate_customer("1.3.0")
     assert e_info.type == ValidationError
     assert "field required" in str(e_info.value)
     assert "firstName" in str(e_info.value)

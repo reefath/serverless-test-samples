@@ -93,6 +93,8 @@ Run the [python-minimal-plugin](./plugins/2-postvalidate-plugins/python-minimal-
 
 Replace the `AWS_REGION` parameter with the region you deployed to.
 
+The plugin function runs on the `python3.14` Lambda runtime. `aws-iatk` 0.1.0 publishes wheels only up to Python 3.12, so on Python 3.13+ `pip install -r tests/requirements.txt` builds it from source and needs a [Go toolchain](https://go.dev/dl/) on your `PATH`.
+
 ```bash
 cd ./plugins/2-postvalidate-plugins/python-minimal-plugin/tests/integration
 PLUGIN_TESTER_STACK_NAME=video-plugin-tester AWS_REGION=us-west-2 python3 -m unittest ./test_by_polling.py

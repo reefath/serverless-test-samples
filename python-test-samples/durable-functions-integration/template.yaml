@@ -4,7 +4,7 @@ Description: Order Processor Durable Function for Cloud Testing
 
 Globals:
   Function:
-    Runtime: python3.13
+    Runtime: python3.14
     Timeout: 60
     MemorySize: 256
 

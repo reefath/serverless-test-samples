@@ -1,5 +1,4 @@
 import sys
-import os
 import github_action_utils as gha_utils
 
 # Read the command-line argument passed to the interpreter when invoking the script

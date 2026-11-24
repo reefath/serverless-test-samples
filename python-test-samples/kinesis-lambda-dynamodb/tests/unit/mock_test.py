@@ -5,18 +5,15 @@
 
 import os
 import json
-from datetime import datetime
 from unittest import TestCase
 from typing import Any, Dict
-from uuid import uuid4
 import yaml
 import boto3
-from boto3 import Session
 from boto3.dynamodb.conditions import Key
 import moto
 
 # Mock the DynamoDB Service during the test
-@moto.mock_dynamodb
+@moto.mock_aws
 class TestKinesisLambdaWithDynamoDB(TestCase):
     """
     Unit Test class for src/app.py

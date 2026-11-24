@@ -37,7 +37,7 @@ if ! cdk synth 2>&1; then
     echo "❌ CDK synthesis failed. Showing error details above."
     echo "💡 Common fixes:"
     echo "   - Install CDK dependencies: pip install aws-cdk-lib constructs boto3"
-    echo "   - Check Python version (needs 3.13+)"
+    echo "   - Check Python version (needs 3.14+)"
     echo "   - Verify stack file syntax"
     exit 1
 fi

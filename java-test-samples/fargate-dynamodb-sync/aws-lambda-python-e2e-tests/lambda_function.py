@@ -1,11 +1,9 @@
-import requests
 import json
 import boto3
 import create_test
 import read_test
 import delete_test
 import update_test
-import pytest
 import os
 import subprocess
  

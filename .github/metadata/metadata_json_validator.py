@@ -16,7 +16,7 @@ python3 .github/METADATA/metadata_json_validator.py python-test-samples/apigw-la
 from os import path
 import re
 import json
-from github import Github, Auth
+from github import Github
 import sys
 
 from aws_lambda_powertools.utilities.validation import validate

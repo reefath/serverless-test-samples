@@ -1,7 +1,7 @@
 pytest
 pytest-mock
 boto3
-moto
+moto>=5.1.15
 aws_lambda_powertools
 aws-xray-sdk
 fastjsonschema

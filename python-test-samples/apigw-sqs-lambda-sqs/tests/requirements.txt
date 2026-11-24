@@ -1,5 +1,5 @@
 pytest
 boto3
-moto
+moto>=5.1.15
 uuid
 requests

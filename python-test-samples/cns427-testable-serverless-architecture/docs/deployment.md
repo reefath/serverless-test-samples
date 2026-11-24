@@ -19,9 +19,9 @@ Before you begin, ensure you have the following installed:
 
 ### Required Tools
 
-1. **Python 3.13+**
+1. **Python 3.14+**
    ```bash
-   python3 --version  # Should be 3.13 or higher
+   python3 --version  # Should be 3.14 or higher
    ```
 
 > **Note**:
@@ -580,7 +580,7 @@ poetry install
 **Error:** `jsii.errors.JSIIError`
 
 **Solution:**
-- Check Python version: `python --version` (must be 3.13+)
+- Check Python version: `python --version` (must be 3.14+)
 - Reinstall dependencies: `poetry install --no-cache`
 - Clear CDK cache: `rm -rf cdk.out/`
 
